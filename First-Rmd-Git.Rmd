@@ -1,18 +1,24 @@
 ---
-title: "First R Markdown in Git."
-author: "Caleb Trujillo"
-date: "2021/01/09"
+title: "HW Assignment 1"
+author: "Mia Keane"
+date: "2024/01/12"
 output: html_document
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-require(tidyverse)
-```
+require('tidyverse')
+``` 
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+I've added text here to show that I can write in an R document 
+Here are some of my favorite things
+
+- cats
+- books
+- camping
+
 
 When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
@@ -20,7 +26,7 @@ When you click the **Knit** button a document will be generated that includes bo
 summary(mpg)
 ```
 
-## Including Plots
+## Average mpg
 
 You can also embed plots, for example:
 
@@ -30,7 +36,7 @@ avgmpgdata <- mpg %>%
   summarize(hwy = mean(hwy), cty = mean(cty))
 
 g <- ggplot(data = avgmpgdata)
-g + geom_col(aes(x = hwy, y = reorder(manufacturer, hwy), fill = manufacturer)) +
-  ggtitle("Average Miles per Gallon for Highway Driving by Manufacturer", subtitle = "Data on vehicles from 1999 to 2008 for 38 popular models of cars") +
+g + geom_col(aes(x = cty, y = reorder(manufacturer, cty), fill = manufacturer)) +
+  ggtitle("Average Miles per Gallon for City Driving by Manufacturer", subtitle = "Data on vehicles from 1999 to 2008 for 38 popular models of cars") +
   theme(legend.position="none") 
 ```
